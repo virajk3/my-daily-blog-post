@@ -12,10 +12,12 @@ function MyPosts() {
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getPosts();
-  }, []);
+  }, [postCollectionRef]);
 
   const renderPost = () => {
-    return postList.map(post => <Post key={post.id} post={post} smp />);
+    return postList
+    .sort((a, b) => a.date > b.date ? -1 : 1)
+    .map(post => <Post key={post.id} post={post} smp />);
   }
 
   return (

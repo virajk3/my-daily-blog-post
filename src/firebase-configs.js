@@ -7,12 +7,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCLgv5MPO3gcUqbdn7uIGAO2HUE7nQE6Kc",
-  authDomain: "my-daily-blog-project2.firebaseapp.com",
-  projectId: "my-daily-blog-project2",
-  storageBucket: "my-daily-blog-project2.appspot.com",
-  messagingSenderId: "684211423207",
-  appId: "1:684211423207:web:cd50a0f09e96998ae31f42"
+  apiKey: "AIzaSyBWKtFThw4f5aQZCUFO9W6MvBu97lnv180",
+  authDomain: "my-daily-blog-posts.firebaseapp.com",
+  projectId: "my-daily-blog-posts",
+  storageBucket: "my-daily-blog-posts.appspot.com",
+  messagingSenderId: "588071281141",
+  appId: "1:588071281141:web:f9fc42862c9e9da6e440bc"
 };
 
 // Initialize Firebase

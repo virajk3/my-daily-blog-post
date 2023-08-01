@@ -14,18 +14,19 @@ function CreatePost({ isAuth }) {
   const createPost = async () => {
     await addDoc(postCollectionRef,
       {
+        date:new Date(),
         title,
         body,
         author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
       });
-    navigate("/");
+    navigate("/myPosts");
   };
 
   useEffect(() => {
     if (!isAuth) {
       navigate("/login");
     }
-  }, []);
+  }, [isAuth, navigate]);
   return (
     <div className="createPostPage">
       {" "}

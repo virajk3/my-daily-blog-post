@@ -16,8 +16,9 @@ const SinglePostPage = ({
   hasErrors,
   loading,
 }) => {
-
   const params = useParams();
+
+  
   useEffect(() => {
     const id = params.id;
     dispatch(fetchComments(id))
