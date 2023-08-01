@@ -6,27 +6,23 @@ import { fetchComments } from '../actions/commentsActions'
 
 import { Post } from '../components/Post'
 import { Comment } from '../components/Comments'
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 const SinglePostPage = ({
-  match,
   dispatch,
   post,
   comments,
   hasErrors,
   loading,
 }) => {
-  const location = useLocation();
 
+  const params = useParams();
   useEffect(() => {
-   
-    const id  = Number(location.state.from);
-   // const { id } = from;//match.params;
-
+    const id = params.id;
     dispatch(fetchComments(id))
     dispatch(fetchPost(id))
-  }, [dispatch, match])
+  }, [dispatch])
 
   const renderPost = () => {
     if (loading.post) return <p>Loading post...</p>

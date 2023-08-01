@@ -6,10 +6,7 @@ import PostsPage from './PostsPage'
 
 const DashboardPage = (props) => (
   <section>
-    {/* {props.isAuth && <Link to="/posts" className="button">
-      View Posts
-    </Link>} */}
-    {props.isAuth && <PostsPage/>}
+    {props.isAuth && <PostsPage />}
   </section>
 )
 

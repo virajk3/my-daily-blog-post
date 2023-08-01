@@ -4,6 +4,7 @@ export const initialState = {
   loading: false,
   hasErrors: false,
   posts: [],
+  myPosts: []
 }
 
 export default function postsReducer(state = initialState, action) {
