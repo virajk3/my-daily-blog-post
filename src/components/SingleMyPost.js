@@ -62,7 +62,7 @@ function SingleMyPost() {
                             onChange={(event) => { setComments(event.target.value) }}
                             value={comments} />
                     </div>
-                    <button className='button' onClick={handleAddComment} >Submit Comment</button>
+                    <button className='button' style={{marginLeft:'38rem'}} onClick={handleAddComment} >Submit Comment</button>
                 </div>
 
             </div>
