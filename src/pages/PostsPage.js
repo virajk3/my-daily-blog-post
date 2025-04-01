@@ -20,6 +20,9 @@ const headers = [
 
 const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
 
+  const token = localStorage.getItem("token");
+  console.log("Token Received", token)
+
   const [data, setData] = useState([]);
   useEffect(() => {
     dispatch(fetchPosts())
@@ -28,7 +31,9 @@ const PostsPage = ({ dispatch, loading, posts, hasErrors }) => {
 
   const fetchData = () => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      //.get("https://jsonplaceholder.typicode.com/posts")
+      .get("http://localhost:8080/blog-posts", 
+        { headers: { Authorization: `Bearer ${token}` } })
       .then(({ data }) => {
         setData(data);
         console.log(data);

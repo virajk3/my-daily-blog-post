@@ -2,6 +2,7 @@ import React from 'react'
 import { auth, provider } from "../firebase-configs"
 import { signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { toBeChecked } from '@testing-library/jest-dom/matchers';
 
 function Login({ setIsAuth }) {
 
@@ -11,6 +12,13 @@ function Login({ setIsAuth }) {
       setIsAuth(true);
       localStorage.setItem("isAuth", true);
       navigate("/");
+
+      result.user.getIdToken().then((token) => {
+        console.log("JWT Token", token);
+        localStorage.setItem("token",token);
+      }).catch((error) => {
+        console.error("Error getting JWT token:", error);
+      });
     });
   }
 
